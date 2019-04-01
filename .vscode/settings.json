@@ -1,0 +1,17 @@
+// Workspace settings
+{
+  // The following will hide certain files in the editor
+  "files.exclude": {
+    "**/node_modules": true, // node modules folder
+    "**/.eslintignore": true,
+    "**/.eslintrc.json": true,
+    "**/.gitattributes": true,
+    // "**/.gitignore": true,
+    "**/.sonarcloud.properties": true,
+    "**/sonar-project.properties":true,
+    "**/.travis.yml": true,
+    "**/LICENSE": true, // the license
+    "**/package-lock.json": true, // package-lock.json
+    // "**/.**": true, // files starting with "."
+  }
+}
