@@ -6,7 +6,7 @@
 <!-- PR (working into submission) -->
 [1]: https://github.com/401-advanced-javascript-billybunn/lab-11/pull/1
 <!-- travis build -->
-[2]: https://www.travis-ci.com/YOUR_ORG_NAME/REPO_NAME
+[2]: https://travis-ci.com/401-advanced-javascript-billybunn/lab-11/builds/106651934
 <!-- back-end -->
 [3]: http://xyz.com
 <!-- front-end -->
