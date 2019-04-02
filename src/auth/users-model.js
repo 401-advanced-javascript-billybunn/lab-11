@@ -1,5 +1,8 @@
 'use strict';
-
+/**
+ * Users Model - Uses mongoose to create a MongoDB schema for users with usernames, passwords, emails, and roles. 
+ * @module auth/users-model
+ */
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
