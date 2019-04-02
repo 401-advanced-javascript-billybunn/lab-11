@@ -1,12 +1,40 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB
 =================================================
 
-`echo '{"username":"Billy", "password":"supersecret"}' | http :3000/signup`
-`http post :3000/signin -a Billy:supersecret`
-`http :3000/books -a Billy:supersecret`
-`http :3000/books/2 -a Billy:supersecret`
+<!-- LINKS -->
+<!-- Replace the link for each in brackets below -->
+<!-- PR (working into submission) -->
+[1]: https://github.com/401-advanced-javascript-billybunn/lab-11/pull/1
+<!-- travis build -->
+[2]: https://travis-ci.com/401-advanced-javascript-billybunn/lab-11/builds/106651934
+<!-- back-end -->
+[3]: http://xyz.com
+<!-- front-end -->
+[4]: http://xyz.com
+<!-- swagger -->
+[5]: http://xyz.com
+<!-- jsdoc-->
+[6]: heroku-link/docs 
 
-## Bug fixes
+## Lab 11: Authentication
+
+### Author: Billy Bunn
+Completed in collaboration with Erin Trainor and Chris Merritt.
+
+### Links and Resources
+* [PR][1]
+* [travis][2]
+* [back-end][3] <!-- (when applicable) -->
+<!-- * [front-end][4] (when applicable) -->
+
+#### Documentation
+<!-- API assignments only -->
+<!-- * [swagger][5] -->
+<!-- (All assignments) -->
+* [jsdoc][6]
+
+## Assignment
+### Bug fixes
 #### `app.js`
 * added `app.use(authRouter)` to `app.js` before catch-all middleware
 #### `router.js`
@@ -34,7 +62,7 @@ function _authenticate(user) {
 ```
 * change `auth` variable inside `_authBasic` function add `username` and `password` to an **object** instead of an array.
 
-## Book routes authentication
+### Book routes authentication
 #### `app.js`
 * wired `books.js` to routes; used _after_ `authRouter`
 ```
@@ -51,49 +79,16 @@ router.get('/books', auth, handleGetAll);
 router.get('/books/:id', auth, handleGetOne);
 ```
 
-<!-- LINKS -->
-<!-- Replace the link for each in brackets below -->
-<!-- PR (working into submission) -->
-[1]: https://github.com/401-advanced-javascript-billybunn/lab-11/pull/1
-<!-- travis build -->
-[2]: https://travis-ci.com/401-advanced-javascript-billybunn/lab-11/builds/106651934
-<!-- back-end -->
-[3]: http://xyz.com
-<!-- front-end -->
-[4]: http://xyz.com
-<!-- swagger -->
-[5]: http://xyz.com
-<!-- jsdoc-->
-[6]: heroku-link/docs 
-
-## Lab 11: Authentication
-
-### Author: Billy Bunn
-
-### Links and Resources
-* [PR][1]
-* [travis][2]
-<!-- (when applicable) -->
-* [back-end][3]
-<!-- (when applicable) -->
-* [front-end][4]
-
-#### Documentation
-<!-- API assignments only -->
-* [swagger][5]
-<!-- (All assignments) -->
-* [jsdoc][6]
 
 ### Modules
-#### `modulename.js`
-##### Exported Values and Methods
-
-###### `foo(thing) -> string`
-<!-- If you finished everything, you should be able to copy/paste the lab requirements and put them in present tense. -->
-Usage Notes or examples
-
-###### `bar(array) -> array`
-Usage Notes or examples
+See JSDocs for details on each mondule's exported values and methods.
+* **`app.js`**
+* **`auth/middleware.js`**
+* **`auth/router.js`**
+* **`auth/users-model.js`**
+* **`middleware/404.js`**
+* **`middleware/error.js`**
+* **`routes/books.js`**
 
 ### Setup
 #### `.env` requirements
@@ -104,11 +99,21 @@ Usage Notes or examples
 
 #### Running the app
 * `npm start`
-* Endpoint: `/`
-* Endpoint: `/foo/bar/`
+* Endpoint: `/signup`
   * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
+* Endpoint: `/signin`
+  * Returns a JSON object with abc in it.
+* Endpoint: `/books`
+  * Returns a JSON object with abc in it.
+* Endpoint: `/books/:id`
   * Returns a JSON object with xyz in it.
+
+#### Instructions
+If you've cloned the repo to your machine, you can use HTTPie to interact with the app. Here are some example requests for each endpoint:
+* `echo '{"username":"Billy", "password":"supersecret"}' | http :3000/signup`
+* `http post :3000/signin -a Billy:supersecret`
+* `http :3000/books -a Billy:supersecret`
+* `http :3000/books/2 -a Billy:supersecret`
   
 #### Tests
 * How do you run tests?
@@ -118,4 +123,4 @@ Usage Notes or examples
 * What assertions need to be / should be made?
 
 #### UML
-Link to an image of the UML for your application and response to events
+![UML diagram](./assets/uml-diagram.jpg)
